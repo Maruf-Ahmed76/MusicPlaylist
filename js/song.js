@@ -1,7 +1,8 @@
-function song(title,artist,duration){
+function song(title,artist,duration,src){
     this.title = title;
     this.artist = artist;
     this.duration = duration;
+    this.src = src;
     this.isPlaying = false;
 }
 song.prototype.play = function(){
@@ -26,6 +27,16 @@ song.prototype.toHTML = function(){
     htmlSting += '</p>';
     htmlSting += '<p class="text-danger text-left">';
     htmlSting += this.duration;
-    htmlSting+= '</p></li>';
+    htmlSting += '</p></li>';
+    htmlSting += '<audio';
+    if(this.isPlaying == true){
+        htmlSting += ' id="current-music"';
+    }
+    htmlSting += '>';
+    htmlSting += '<source id="source"';
+    htmlSting += ' src="';
+    htmlSting += this.src;
+    htmlSting += '">';
+    htmlSting += '</audio>';
     return htmlSting;
 }

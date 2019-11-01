@@ -5,7 +5,7 @@ function playlist(){
 playlist.prototype.add = function(song){
     this.song.push(song);
 }
-playlist.prototype.play = function(){
+playlist.prototype.pplay = function(){
     var currentSong = this.song[this.nowPlayingIndex];
     currentSong.play();
 }
@@ -19,7 +19,7 @@ playlist.prototype.next = function(){
     if(this.nowPlayingIndex === this.song.length){
         this.nowPlayingIndex = 0;
     }
-    this.play();
+    this.pplay();
 }
 playlist.prototype.prev = function(){
     this.stop();
@@ -27,7 +27,7 @@ playlist.prototype.prev = function(){
     if(this.nowPlayingIndex < 0){
         this.nowPlayingIndex = this.song.length-1;
     }
-    this.play();
+    this.pplay();
 }
 playlist.prototype.renderElement = function(list){
     list.innerHTML = "";

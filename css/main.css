@@ -103,6 +103,7 @@ textarea {
    ========================================================================== */
 p{
     margin: unset!important;
+    font-size: 0.7rem!important;
 }
 .music{
     cursor: pointer;
@@ -212,8 +213,10 @@ p{
    Modify as content requires.
    ========================================================================== */
 
-   @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+@media only screen and (min-width: 578px) {
+    p{
+        font-size: 1rem!important;
+    }
 }
 
 @media print,

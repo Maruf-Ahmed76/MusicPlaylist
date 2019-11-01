@@ -14,16 +14,26 @@ playlist.renderElement(playlistElement);
 
 var prev = document.getElementById("prev");
 prev.onclick = function(){
+    stop.innerHTML = '<i class="fas fa-pause"></i>';
     playlist.prev();
     playlist.renderElement(playlistElement);
 }
 var next = document.getElementById("next");
 next.onclick = function(){
+    stop.innerHTML = '<i class="fas fa-pause"></i>';
     playlist.next();
     playlist.renderElement(playlistElement);
 }
 var stop = document.getElementById("stop");
 stop.onclick = function(){
-    playlist.stop();
-    playlist.renderElement(playlistElement);
+    if(playlist.song[playlist.nowPlayingIndex].isPlaying){
+        stop.innerHTML = '<i class="fas fa-play"></i>';
+        playlist.stop();
+        playlist.renderElement(playlistElement);
+    }else{
+        stop.innerHTML = '<i class="fas fa-pause"></i>';
+        playlist.play();
+        playlist.renderElement(playlistElement);
+    }
+    
 }

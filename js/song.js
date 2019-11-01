@@ -18,13 +18,13 @@ song.prototype.toHTML = function(){
         htmlSting += ' class="music list-group-item border-0 d-flex flex-row justify-content-between"';
     }
     htmlSting += '>';
-    htmlSting += '<p class="text-info">';
+    htmlSting += '<p class="text-info text-left">';
     htmlSting += this.title;
     htmlSting += '</p>';
-    htmlSting += '<p class="text-dark">';
+    htmlSting += '<p class="text-dark text-left">';
     htmlSting += this.artist;
     htmlSting += '</p>';
-    htmlSting += '<p class="text-danger">';
+    htmlSting += '<p class="text-danger text-left">';
     htmlSting += this.duration;
     htmlSting+= '</p></li>';
     return htmlSting;
